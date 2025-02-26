@@ -17,10 +17,10 @@ export default function Header() {
         <ul className="flex space-x-8 text-lg font-medium">
           <li>
             <Link
-              to="refer"
+              to="referEarn"
               smooth={true}
               duration={500}
-              offset={-80} // Adjust for fixed header
+              offset={-80} // Adjusts for fixed header height
               className="cursor-pointer hover:text-blue-500 transition-all"
             >
               Refer Now
@@ -73,7 +73,7 @@ export default function Header() {
           </Button>
           <Button
             variant="contained"
-            color="secondary"
+            color="primary"
             onClick={() => navigate("/signup")}
             className="px-4 py-2 font-medium bg-blue-600 text-white hover:bg-blue-700 transition-all"
           >
@@ -84,6 +84,9 @@ export default function Header() {
     </header>
   );
 }
+
+
+
 
 
 

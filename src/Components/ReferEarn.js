@@ -31,7 +31,7 @@ export default function ReferEarn() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
+    <section id='referEarn' className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
       <h1 className="text-4xl font-bold mb-4 drop-shadow-lg">Refer & Earn</h1>
       <p className="text-lg mb-6 text-center max-w-lg">Refer a course to your friends and earn exciting rewards! Help them grow while you benefit.</p>
       <Button variant="contained" color="secondary" className="px-6 py-3 text-lg font-semibold shadow-md" onClick={handleOpen}>
