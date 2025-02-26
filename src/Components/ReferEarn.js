@@ -22,11 +22,29 @@ export default function ReferEarn() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log('Form submitted:', formData);
-      handleClose();
+
+    try {
+      const response = await fetch("https://accredian-be-8q27.onrender.com/api/referrals", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Referral submitted successfully!");
+        setFormData({ referrerName: "", referrerEmail: "", refereeName: "", refereeEmail: "", course: "", message: "" }); // Reset form
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    } catch (error) {
+      console.error("Error submitting referral:", error);
+      alert("Something went wrong. Please try again.");
     }
   };
 
